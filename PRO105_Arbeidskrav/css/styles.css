@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+body{
+    margin: 0%;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(14, 14, 14);
+}    
+
+
+/*Dette er bare en testboks for å se om z-aksen var stilt riktig*/
+.test {
+    position: absolute;
+    border: 5px solid magenta;
+    font-family: sans-serif;
+    height: 500px;
+    width: 500px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+/* Dette er bare et overordnet objekt for hendene */
+#wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hender med piller */
+.pills {
+    display: flex;
+    margin-top: 25vh;
+    width: 600px;
+    transition: 1500ms;
+    z-index: 10;
+}
+
+/* Piller hover */
+#red-pill:hover, #blue-pill:hover {
+    transform: scale(1.1, 1.1) translateY(3vh);
+}
+
+#morpheus {
+    display: flex;
+    justify-content: center;
+}
+
+#morpheus > h4 {
+    display: flex;
+    /* animation:   morpheus-text 10s steps(212) 12s 1 normal both,
+                 blinker 500ms steps(212) infinite normal;
+                     position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    position: relative;
+    border-right: 2px solid rgba(70, 112, 76, 1);
+    font-size: 200%; */
+    position: relative;
+    text-align: center;
+    /* white-space: nowrap;
+    overflow: hidden; */
+    /* transform: translateY(-50%); */
+    margin-top: 1em;
+    color: rgb(107, 107, 107);
+    font-family: 'Anonymous Pro', monospace;
+    opacity: 0.5;
+
+}
+
+@keyframes morpheus-text {
+    from {
+        width: 0;
+    }
+    to {
+        width: 72em;
+    }
+}
+
+@keyframes blinker {
+    from {
+        border-right-color: rgb(70, 112, 76);
+    }
+    to {
+        border-right-color: transparent;
+    }   
+}
+
+video{
+    /* display: none; For testing */
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    animation-name: intro;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    z-index: 1;
+}
+
+
+@keyframes intro {
+    0%{}
+    10%{transform: scale(1, 1);}
+    /* 20%{transform: scale(1.5, 1.5);}
+    30%{transform: scale(2, 2);}
+    40%{transform: scale(2.5, 2.5);}
+    50%{transform: scale(3, 3);}
+    60%{transform: scale(5, 5);}
+    70%{transform: scale(6, 6);} */
+    80%{transform: scale(8, 8);}
+    99% {
+        transform: scale(10, 10);
+        z-index: 1;
+        height: 100vh;
+        width: 100vw;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+        z-index: -2;
+        width: 0;
+        height: 0;
+    }
+
+    
+}

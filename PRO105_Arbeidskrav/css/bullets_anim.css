@@ -1,0 +1,62 @@
+:root {
+    --bullet-size: 10px;
+}
+
+.bullet {
+    width: var(--bullet-size);
+    animation-name: flying-bullets;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 2s;
+    padding: 40px;
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+    margin: -40px;
+}
+
+#bullets {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform-origin: 50% 50%;
+}
+
+#bullet-1 {
+    left: 10px;
+    margin-left: -100px;
+}
+#bullet-2 {
+    margin-left: -40px;
+}
+#bullet-3 {
+   margin-left: -300px;
+}
+#bullet-4 {
+    margin-left: 400px;
+}
+#bullet-5 {
+    margin-left: 45px;
+}
+
+#bottom:hover {
+    cursor: url('/img/neo_sprite.png') 15 45, auto;
+}
+
+.bullet:hover {
+    animation-name: flying-bullets;
+    transition: 500ms;
+    animation-play-state: paused;
+}
+
+@keyframes flying-bullets {
+    from { left: 0; }
+
+    to {
+        display: inline-block;
+        transform: translateX(120vw);
+        background-color: rgba(235, 0, 0, 0);
+    }
+}
